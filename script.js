@@ -320,32 +320,41 @@ function addItemToComparison(item) {
     const widthMm = convertToMm(item.width, item.unit);
     const heightMm = convertToMm(item.height, item.unit);
     
+
     // Create unit conversion displays
-    const kmLabel = document.createElement('div');
-    kmLabel.textContent = `${(widthMm/1000000).toFixed(5)}*${(heightMm/1000000).toFixed(5)}km`;
-    
-    const cmLabel = document.createElement('div');
-    cmLabel.textContent = `${(widthMm/10).toFixed(1)}*${(heightMm/10).toFixed(1)}cm`;
-    
     const mmLabel = document.createElement('div');
-    mmLabel.textContent = `${widthMm.toFixed(0)}*${heightMm.toFixed(0)}mm`;
-    
+    mmLabel.textContent = `${widthMm.toFixed(0)}*${heightMm.toFixed(0)} mm`;
+
+    const cmLabel = document.createElement('div');
+    cmLabel.textContent = `${(widthMm / 10).toFixed(1)}*${(heightMm / 10).toFixed(1)} cm`;
+
+    const mLabel = document.createElement('div');
+    mLabel.textContent = `${(widthMm / 1000).toFixed(3)}*${(heightMm / 1000).toFixed(3)} m`;
+
+    const kmLabel = document.createElement('div');
+    kmLabel.textContent = `${(widthMm / 1000000).toFixed(5)}*${(heightMm / 1000000).toFixed(5)} km`;
+
     const inchLabel = document.createElement('div');
-    inchLabel.textContent = `${(widthMm/25.4).toFixed(5)}*${(heightMm/25.4).toFixed(5)}inch`;
-    
-    const yardLabel = document.createElement('div');
-    yardLabel.textContent = `${(widthMm/914.4).toFixed(2)}*${(heightMm/914.4).toFixed(2)}yard`;
-    
+    inchLabel.textContent = `${(widthMm / 25.4).toFixed(2)}*${(heightMm / 25.4).toFixed(2)} inch`;
+
     const ftLabel = document.createElement('div');
-    ftLabel.textContent = `${(widthMm/304.8).toFixed(2)}*${(heightMm/304.8).toFixed(2)}ft`;
-    
+    ftLabel.textContent = `${(widthMm / 304.8).toFixed(2)}*${(heightMm / 304.8).toFixed(2)} ft`;
+
+    const yardLabel = document.createElement('div');
+    yardLabel.textContent = `${(widthMm / 914.4).toFixed(2)}*${(heightMm / 914.4).toFixed(2)} yard`;
+
+    const ptLabel = document.createElement('div');
+    ptLabel.textContent = `${(widthMm / 0.352778).toFixed(0)}*${(heightMm / 0.352778).toFixed(0)} pt`;
+
     // Assemble the item
-    itemInfo.appendChild(kmLabel);
-    itemInfo.appendChild(cmLabel);
     itemInfo.appendChild(mmLabel);
+    itemInfo.appendChild(cmLabel);
+    itemInfo.appendChild(mLabel);
+    itemInfo.appendChild(kmLabel);
     itemInfo.appendChild(inchLabel);
-    itemInfo.appendChild(yardLabel);
     itemInfo.appendChild(ftLabel);
+    itemInfo.appendChild(yardLabel);
+    itemInfo.appendChild(ptLabel);
     
     itemElement.appendChild(nameDiv);
     itemElement.appendChild(itemVisual);
