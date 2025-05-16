@@ -21,9 +21,14 @@ const defaultItems = [
 const conversionToMm = {
     mm: 1,
     cm: 10,
+    m: 1000,
+    km: 1000000,
     inch: 25.4,
     ft: 304.8,
-    yard: 914.4
+    yard: 914.4,
+    mile: 1609344,
+    pt: 0.352778,
+    μm: 0.001
 };
 
 // Screen density detection (for Real Life Mode)
